@@ -1,2 +1,2 @@
-Backend Spring Boot code in fork SprintBoot
-Front End Angular Code in fork Angular
+Backend Spring Boot code in branch SprintBoot
+Front End Angular Code in branch Angular

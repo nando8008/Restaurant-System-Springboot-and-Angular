@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-image: url('https://www.wallpaperflare.com/static/284/272/1013/restaurant-cafe-appliances-tables-wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  color: #f8f5f200;
+}
+.custom-outline-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  background: transparent;
+  color: #f8f5f2;
+  border: 1px solid #c2b280;
+  transition: background 0.3s, color 0.3s;
+}
+
+.custom-outline-btn:hover {
+  background-color: #c2b280;
+  color: #1e1e1e;
+}
+
+.custom-gold-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  background-color: #c2b280;
+  color: #1e1e1e;
+  border: none;
+  transition: background 0.3s;
+}
+
+.custom-gold-btn:hover {
+  background-color: #d3af37;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f8f5f2;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.8);
+}
+

@@ -1,0 +1,62 @@
+<header class="pt-2" style="background-color: #1e1e1e; color: #f8f5f2">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <!-- Brand -->
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="navbar-brand nav-bar-title"
+        >Le Restau'</a
+      >
+
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              routerLink="/home"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link px-3"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              routerLink="/menu"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link px-3"
+              >Menu</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#reservations" class="nav-link px-3">Reservations</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link px-3">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Buttons -->
+        <div class="d-flex">
+          <button type="button" class="btn custom-outline-btn me-2">
+            Login
+          </button>
+          <button type="button" class="btn custom-gold-btn">Order Now</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,101 @@
+<div class="container py-5 menu-page rounded-4">
+  <!-- Title -->
+  <div class="text-center mb-5 fade-in">
+    <h1 class="display-4 menu-title">Our Menu</h1>
+    <p class="menu-subtitle">
+      Handcrafted dishes that celebrate taste, tradition, and luxury
+    </p>
+    <div class="divider mx-auto my-3"></div>
+  </div>
+
+  <div class="accordion" id="menuAccordion">
+    <ng-container *ngFor="let category of menuData; let i = index">
+      <div class="accordion-item menu-accordion-item fade-in">
+        <h2 class="accordion-header" [attr.id]="'heading' + i">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            [attr.data-bs-target]="'#collapse' + i"
+            aria-expanded="false"
+            [attr.aria-controls]="'collapse' + i"
+          >
+            {{ category.name }}
+          </button>
+        </h2>
+        <div
+          class="accordion-collapse collapse"
+          [attr.id]="'collapse' + i"
+          [attr.aria-labelledby]="'heading' + i"
+          data-bs-parent="#menuAccordion"
+        >
+          <div class="accordion-body">
+            <ul class="list-unstyled">
+              <li
+                *ngFor="let item of category.items"
+                class="menu-item d-flex justify-content-between align-items-start"
+              >
+                <div>
+                  <div class="menu-item-name fw-semibold">
+                    <span
+                      class="me-2"
+                      [ngClass]="item.veg === 'VEG' ? 'dot-green' : 'dot-red'"
+                    ></span>
+                    {{ item.name }}
+                  </div>
+                  <div class="menu-item-desc ms-3">{{ item.description }}</div>
+                  <div class="menu-item-type mt-1 d-flex align-items-center">
+                    <span
+                      *ngIf="!item.isAvailable"
+                      class="badge bg-secondary ms-2"
+                    >
+                      Unavailable
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-end">
+                  <div class="menu-item-price fw-bold">₹{{ item.price }}</div>
+
+                  <!-- Add to Cart / Quantity Buttons -->
+                  <div class="mt-2">
+                    <ng-container
+                      *ngIf="getQuantity(item.id) === 0; else quantityBlock"
+                    >
+                      <button
+                        class="btn btn-outline-gold btn-sm"
+                        (click)="addToCart(item)"
+                      >
+                        Add to Cart
+                      </button>
+                    </ng-container>
+
+                    <ng-template #quantityBlock>
+                      <div class="btn-group" role="group">
+                        <button
+                          class="btn quantity-dec btn-outline-gold btn-sm"
+                          (click)="decreaseQty(item)"
+                        >
+                          −
+                        </button>
+                        <button class="btn btn-light btn-sm disabled">
+                          {{ getQuantity(item.id) }}
+                        </button>
+                        <button
+                          class="btn quantity-inc btn-outline-gold btn-sm"
+                          (click)="increaseQty(item)"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

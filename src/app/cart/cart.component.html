@@ -1,0 +1,47 @@
+<div class="container py-5 cart-page">
+  <h2 class="mb-4">🛒 Your Cart</h2>
+
+  <!-- Empty Cart Message -->
+  <div *ngIf="cartItems.length === 0" class="text-center text-muted mt-5">
+    <h4>Your cart is hungry 🍽️</h4>
+    <p>Add something tasty to feed it!</p>
+  </div>
+
+  <!-- Cart Items List -->
+  <div *ngIf="cartItems.length > 0">
+    <div
+      class="card mb-4"
+      *ngFor="let item of cartItems; trackBy: trackByFoodId"
+    >
+      <div class="card-body">
+        <h5 class="card-title fw-bold">{{ item.name }}</h5>
+        <p class="card-text mb-1">Quantity: {{ item.quantity }}</p>
+        <p class="card-text mb-1">Unit Price: ₹{{ item.unit_price }}</p>
+        <p class="card-text mb-1">
+          Subtotal: ₹{{ item.unit_price * item.quantity }}
+        </p>
+        <p class="card-text mb-2 text-muted small">
+          Added at: {{ item.added_at | date : "short" }}
+        </p>
+
+        <div class="form-group">
+          <label class="form-label">Special Instructions</label>
+          <textarea
+            class="form-control"
+            rows="2"
+            placeholder="e.g. Less spicy, extra cheese..."
+            [(ngModel)]="item.special_instructions"
+            (ngModelChange)="updateSpecialInstructions(item, $event)"
+            name="special-{{ item.food_id }}"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total + Checkout -->
+    <div class="text-end mt-4">
+      <h4>Total: ₹{{ getTotal() }}</h4>
+      <button class="btn btn-outline-success mt-2">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>

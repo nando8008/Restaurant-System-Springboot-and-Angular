@@ -1,0 +1,48 @@
+.nav-bar-title {
+  color: #f8f5f2;
+  font-size: 1.5rem;
+  font-family: 'Georgia', serif;
+  transition: background 0.3s, color 0.3s, font-size 0.3s;
+}
+
+.nav-bar-title:hover {
+  color: #c2b280;
+  font-size: 1.6rem;
+}
+
+.custom-outline-btn {
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    background: transparent;
+    color: #f8f5f2;
+    border: 1px solid #c2b280;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .custom-outline-btn:hover {
+    background-color: #c2b280;
+    color: #1e1e1e;
+  }
+
+  .custom-gold-btn {
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    background-color: #c2b280;
+    color: #1e1e1e;
+    border: none;
+    transition: background 0.3s;
+  }
+
+  .custom-gold-btn:hover {
+    background-color: #d3af37;
+  }
+
+  .nav-link:hover {
+    color: #c2b280 !important;
+  }
+
+  .active-link {
+  color: #c2b280 !important; /* Gold color or any style you prefer */
+}

@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  background-color: #121212;
+  color: #f1f1f1;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.cart-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #c2b280; /* gold accent */
+}
+
+.card {
+  background-color: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+  color: #ffffff;
+}
+
+.card-text {
+  color: #dddddd;
+}
+
+textarea.form-control {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border: 1px solid #444;
+  resize: vertical;
+}
+
+textarea.form-control::placeholder {
+  color: #888888;
+}
+
+.form-label {
+  color: #c2b280;
+}
+
+.text-muted {
+  color: #aaa !important;
+}
+
+.btn-outline-success {
+  border-color: #c2b280;
+  color: #c2b280;
+}
+
+.btn-outline-success:hover {
+  background-color: #c2b280;
+  color: #121212;
+}
